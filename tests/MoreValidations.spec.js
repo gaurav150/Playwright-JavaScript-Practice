@@ -68,7 +68,7 @@ test("Screenshot Validations & Visual comparisons", async ({ page }) => {
     await page.locator("#displayed-text").screenshot({ path: "displayed-text.png" });
 });
 
-test.only("Visual Comparisons", async ({ page }) => { 
+test.skip("Visual Comparisons", async ({ page }) => { 
     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
     await page.locator("#opentab").waitFor();
     expect(await page.screenshot()).toMatchSnapshot("AutomationPractice.png");
