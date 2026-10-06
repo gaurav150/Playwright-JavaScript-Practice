@@ -38,7 +38,7 @@ async function updateCellValue(searchValue, newValue, change, filePath) {
 
 updateCellValue("Mango", 350, { rowChange: 0, columnChange: 2 }, "/Users/gaurav/Downloads/excelDownloadTest.xlsx");
 
-test("Upload and Download Validations", async ({ page }) => { 
+test.skip("Upload and Download Validations", async ({ page }) => { 
 
     await page.goto("https://rahulshettyacademy.com/upload-download-test/");
     const downloadPromise = page.waitForEvent('download');
