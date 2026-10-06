@@ -36,7 +36,7 @@ async function updateCellValue(searchValue, newValue, change, filePath) {
     console.log('Cell value updated successfully');
 }
 
-updateCellValue("Mango", 350, { rowChange: 0, columnChange: 2 }, "/Users/gaurav/Downloads/excelDownloadTest.xlsx");
+// updateCellValue("Mango", 350, { rowChange: 0, columnChange: 2 }, "/Users/gaurav/Downloads/excelDownloadTest.xlsx");
 
 test.skip("Upload and Download Validations", async ({ page }) => { 
 
