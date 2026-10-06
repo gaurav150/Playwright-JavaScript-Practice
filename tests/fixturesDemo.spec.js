@@ -1,5 +1,5 @@
-const { test, expect, request } = require('@playwright/test');
-const customTest = require('./utils/fixturesOld').customTest;
+const { expect } = require('@playwright/test');
+const customTest = require('../utils/fixturesOld').customTest;
 
 
 customTest("Fixture test", async ({ authenticatedPage, createOrder }) => {

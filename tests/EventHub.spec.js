@@ -1,4 +1,4 @@
-const { customTest, expect } = require('./utils/fixtures');
+const { customTest, expect } = require('../utils/fixtures');
 
 customTest('Verify created event is visible', async ({ authenticatedPage, createEvent }) => {
 
