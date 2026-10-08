@@ -21,4 +21,4 @@ allure-report
 displayed-text.png
 hide-textbox.png
 
-./state.json
+state.json
