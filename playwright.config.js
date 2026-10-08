@@ -17,7 +17,7 @@ const config = ({
     name: 'chrome',
     use: {
       browserName: 'chromium',
-      headless: false,
+      headless: true,
       actionTimeout: 10 * 1000,
       navigationTimeout: 30 * 1000,
       screenshot: 'on',
