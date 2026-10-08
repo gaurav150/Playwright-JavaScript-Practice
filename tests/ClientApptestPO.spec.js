@@ -6,7 +6,7 @@ const dataset = JSON.parse(JSON.stringify(require("../utils/placeorderTestData.j
 const parmeterizedataset = JSON.parse(JSON.stringify(require("../utils/parameterizePlaceOrderTestData.json")));
 
 
-test('Verify end-to-end product purchase and order confirmation using Page Object Model', async ({ page }) => {
+test('@Web Verify end-to-end product purchase and order confirmation using Page Object Model', async ({ page }) => {
 
 
     const poManager = new POManager(page, expect);
@@ -40,7 +40,7 @@ test('Verify end-to-end product purchase and order confirmation using Page Objec
 });
 
 for (const data of parmeterizedataset) {
-    test(`Verify end-to-end product purchase for ${data.productName} using POM`, async ({ page }) => {
+    test(`@Web Verify end-to-end product purchase for ${data.productName} using POM`, async ({ page }) => {
 
 
         const poManager = new POManager(page, expect);
@@ -74,7 +74,7 @@ for (const data of parmeterizedataset) {
     });
 }
 
-customTest('Verify product purchase with parameterized test data and fixtures', async ({ page, testDataForOrder }) => {
+customTest('@Web Verify product purchase with parameterized test data and fixtures', async ({ page, testDataForOrder }) => {
 
 
     const poManager = new POManager(page, expect);

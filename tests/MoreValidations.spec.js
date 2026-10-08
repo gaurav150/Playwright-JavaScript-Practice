@@ -1,5 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
+test.describe.configure({ mode: 'parallel' }); // means run all tests of this  file in parallel
+// there are three modes are available parallel, serial, default
 test('Popup validations', async ({ page }) => {
     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
     // await page.goto("https://google.com/");
