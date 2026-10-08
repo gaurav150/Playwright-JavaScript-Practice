@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "regression": "npx playwright test",
+    "allureReport": "npx playwright test --reporter=line,allure-playwright",
+    "uiMode": "npx playwright test --ui",
+    "headedMode": "npx playwright test --headless=false"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

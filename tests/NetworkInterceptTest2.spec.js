@@ -60,7 +60,7 @@ test('Security test request intercept', async ({ page }) => {
     expect(currentUrl).not.toContain(orderIdToIntercept);
 });
 
-test.only('Security test request intercept with aborting it', async ({ page }) => {
+test('Security test request intercept with aborting it', async ({ page }) => {
     // Give the current test's page to APIUtils
     apiUtils.page = page;
 
