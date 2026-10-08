@@ -66,5 +66,4 @@ test('PlayWright testLevel timeout testing', async({page}) => {
 
     await page.locator(".nav-link.btn").click();
     // await page.getByRole('link', { name: /Checkout/ }).click();
-    // await page.pause();
 });

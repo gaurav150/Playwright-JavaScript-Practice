@@ -56,7 +56,6 @@ test('Verify UI displays no orders when order history API response is intercepte
     const noOrdersText = await page.locator(".mt-4").textContent();
     console.log("No Orders Text:", noOrdersText);
     expect(noOrdersText.trim()).toContain("You have No Orders to show at this time.");
-    await page.pause();
 
 });
 

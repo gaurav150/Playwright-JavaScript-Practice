@@ -52,6 +52,4 @@ test.skip("Upload and Download Validations", async ({ page }) => {
     const desiredRow = page.getByRole('row').filter({ has: textLocator });
     await expect(desiredRow.locator("#cell-4-undefined")).toContainText(String(updatedValue));
 
-    // await page.pause();
-
 });

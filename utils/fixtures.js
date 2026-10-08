@@ -1,7 +1,9 @@
 const { test: base, expect } = require('@playwright/test');
-
+const getFutureDate = require('../utils/dateUtils');
 const USERNAME = 'ak@email.com';
 const PASSWORD = 'Learning@830$3mK2';
+
+const futureEventDate = getFutureDate(30);
 
 const customTest = base.extend({
 
@@ -17,6 +19,8 @@ const customTest = base.extend({
             page.waitForURL(url => !url.pathname.includes('/login')),
             page.locator('#login-btn').click()
         ]);
+
+        await page.locator("#event-card").first().waitFor();
 
         await use(page);
     },
@@ -44,7 +48,7 @@ const customTest = base.extend({
             category: 'Conference',
             venue: 'Social Jp Nagar',
             city: 'bangalore',
-            eventDate: '2026-10-05T02:37:00.000Z',
+            eventDate: futureEventDate,
             price: 0.01,
             totalSeats: 100
         };

@@ -58,6 +58,5 @@ test('Verify API-created order appears in order history', async({page}) => {
     .replace(/\|/g, '')
     .trim();
     expect(orderId).toEqual(orderDetailsId);
-    await page.pause();
 });
 

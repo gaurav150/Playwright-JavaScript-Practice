@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+import { workers } from 'node:cluster';
 
 
 /**
@@ -9,12 +10,12 @@ import { defineConfig, devices } from '@playwright/test';
 const config = ({
   testDir: './tests',
   timeout: 40 * 1000,
+  workers: 2,
   expect: {
     timeout: 45 * 1000
   },
   reporter: 'html',
-  projects: [{
-    name: 'chrome',
+
     use: {
       browserName: 'chromium',
       headless: true,
@@ -31,24 +32,24 @@ const config = ({
       //   height: 900
       // },
     }
-  },
-    {
-      name: 'safari',
-      use: {
-        browserName: 'webkit',
-        headless: true,
-        actionTimeout: 10 * 1000,
-        navigationTimeout: 30 * 1000,
-        screenshot: 'on',
-        trace: 'on',
-        retries: 2,
-        ignoreHttpsErrors:true,
-        // viewport: {
-        //   width: 1440,
-        //   height: 900
-        // },
-      }
-    }]
+  
+    // {
+    //   name: 'safari',
+    //   use: {
+    //     browserName: 'webkit',
+    //     headless: true,
+    //     actionTimeout: 10 * 1000,
+    //     navigationTimeout: 30 * 1000,
+    //     screenshot: 'on',
+    //     trace: 'on',
+    //     retries: 2,
+    //     ignoreHttpsErrors:true,
+    //     // viewport: {
+    //     //   width: 1440,
+    //     //   height: 900
+    //     // },
+    //   }
+    // }
 
 
   /* Run your local dev server before starting the tests */

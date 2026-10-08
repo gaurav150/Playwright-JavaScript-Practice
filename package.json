@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "regression": "npx playwright test",
+    "regression": "npx playwright test --workers=2",
     "allureReport": "npx playwright test --reporter=line,allure-playwright",
     "uiMode": "npx playwright test --ui",
     "headedMode": "npx playwright test --headless=false"

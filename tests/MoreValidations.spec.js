@@ -36,7 +36,6 @@ test('Popup validations', async ({ page }) => {
             break;
         }
     }
-    await page.pause();
 });
 
 test("IFrames Validations", async ({ page }) => {
