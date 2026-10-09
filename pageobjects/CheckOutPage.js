@@ -25,13 +25,11 @@ class CheckOutPage {
         await this.countryNameLocator.pressSequentially(partialCountryName, { delay: 300 });
         await this.dropDown.waitFor();
 
-        for (let i = 0; i < await this.countryButton.count(); ++i) {
-            const cName = (await this.countryButton.nth(i).textContent()).trim();
-            if (cName === countryName) {
-                await this.countryButton.nth(i).click();
-                break;
-            }
-        }
+        const countryOption = this.dropDown
+            .locator('button.ta-item')
+            .filter({ hasText: new RegExp(`^\\s*${countryName}\\s*$`) });
+
+        await countryOption.click();
         await this.expect(this.dropDown).toBeHidden();
         await this.placeOrderButton.click();
     }
