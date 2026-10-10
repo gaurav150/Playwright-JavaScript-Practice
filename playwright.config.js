@@ -14,7 +14,16 @@ const config = ({
   expect: {
     timeout: 45 * 1000
   },
-  reporter: 'html',
+  reporter: [
+    ['list'],
+    ['html', {
+      outputFolder: 'playwright-report',
+      open: 'never',
+    }],
+    ['json', {
+      outputFile: 'test-results/results.json',
+    }],
+  ], 
 
     use: {
       browserName: 'chromium',

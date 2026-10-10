@@ -68,6 +68,9 @@ test('Verify sandbox banner is visible when more than 5 events are returned', as
 
     // Step 1: Mock API BEFORE navigating to Events
 
+//     def username = "gaurav150"
+// def newPassword = "Qwerty@123"
+
     await page.route('**/api/events**', async route => {
 
         await route.fulfill({

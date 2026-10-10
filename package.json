@@ -7,7 +7,9 @@
     "regression": "npx playwright test --workers=2",
     "allureReport": "npx playwright test --reporter=line,allure-playwright",
     "uiMode": "npx playwright test --ui",
-    "headedMode": "npx playwright test --headless=false"
+    "headedMode": "npx playwright test --headed",
+    "jenkinsStart": "brew services start jenkins-lts",
+    "jenkinsStop": "brew services stop jenkins-lts"
   },
   "keywords": [],
   "author": "",
