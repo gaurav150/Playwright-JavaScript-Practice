@@ -117,7 +117,7 @@ test("Verify Selenium Practice Page Price Top Deals", async ({ page, context }) 
     expect(deliveryYear).toEqual(String(requiredYear));
 })
 
-test.only("Verify Selenium Practice Page To Flight Booking Page", async ({ page, context }) => {
+test("Verify Selenium Practice Page To Flight Booking Page", async ({ page, context }) => {
     
 
     await page.goto("https://rahulshettyacademy.com/seleniumPractise/");
@@ -134,6 +134,6 @@ test.only("Verify Selenium Practice Page To Flight Booking Page", async ({ page,
     await newPage.waitForLoadState();
     await newPage.locator(".book_flight").waitFor();
 
-    
+
 
 })
