@@ -23,7 +23,10 @@ const config = ({
     ['json', {
       outputFile: 'test-results/results.json',
     }],
-  ], 
+    ['junit', {
+      outputFile: 'test-results/results.xml',
+    }],
+  ],
 
     use: {
       browserName: 'chromium',
