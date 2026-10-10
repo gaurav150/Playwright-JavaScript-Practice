@@ -8,6 +8,7 @@ import { workers } from 'node:cluster';
  *  shift + option + f  to format the code
  */
 const config = ({
+  retries: process.env.RETRIES ? Number(process.env.RETRIES) : 1,
   testDir: './tests',
   timeout: 40 * 1000,
   workers: 2,
