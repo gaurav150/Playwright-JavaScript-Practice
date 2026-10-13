@@ -13,6 +13,8 @@ class LoginPage {
         this.userPassword = this.page.locator("[data-qa='login-password']");
         this.loginButton = this.page.locator("[data-qa='login-button']");
         this.logOutButton = this.page.locator("[href*='logout']");
+        this.contactUsButton = this.page.locator("[href*='contact_us']");
+        this.categoryLocator = this.page.locator(".left-sidebar h2");
         this.emailId;
     }
 
@@ -33,17 +35,16 @@ class LoginPage {
         this.emailId = `${userName}${randomNumber}@ymail.com`;
     }
 
-    async validCreateNewUser(userName) {
-
-        if (!this.emailId) {
-            throw new Error("Email ID has not been generated. Call createValidEmailId() first.");
-        }
+    async naigateToLoginPage() {
+        
         await this.expect(this.automationExerciseLogo).toBeVisible();
         await this.signUpLoginButton.click();
         await this.expect(this.newUserSignUptext).toHaveText("New User Signup!");
-        
+    }
+
+    async validCreateNewUser(userName, emailId) {
         await this.signUpUserName.fill(userName);
-        await this.userSignUpEmail.fill(this.emailId);
+        await this.userSignUpEmail.fill(emailId);
         await this.signUpButton.click();
     }
 
@@ -51,6 +52,13 @@ class LoginPage {
         this.logOutButton.click();
     }
     
+    async navigatingToContactUsForm() {
+        this.contactUsButton.click();
+    }
+
+    async userVerifiesForHomePage() {
+        await this.expect(this.categoryLocator.first()).toHaveText("Category");
+    }
 }
 
 module.exports = LoginPage;
