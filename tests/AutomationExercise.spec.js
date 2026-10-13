@@ -97,7 +97,7 @@ test("Register User with existing email", async ({ page }) => {
     await expect(page.locator(".signup-form p")).toHaveText("Email Address already exist!")
 })
 
-test.only("Verifying Contact us Form Successfully submitted", async ({ page }) => {
+test("Verifying Contact us Form Successfully submitted", async ({ page }) => {
     const poManager = new POManager(page, expect);
     const loginPage = poManager.getLoginPage();
     await loginPage.goToUrl('http://automationexercise.com');
