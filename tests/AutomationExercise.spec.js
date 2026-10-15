@@ -164,3 +164,27 @@ test(" Verify Subscription in Cart page", async ({ page }) => {
     await homePage.userClickedOnCartButton();
     await homePage.userSubscribesToNewsletterSuccessfully("sam@ymail.com");
 })
+
+test("Verify Products Added in Cart", async ({ page }) => {
+    const poManager = new POManager(page, expect);
+    const loginPage = poManager.getLoginPage();
+    const homePage = poManager.getHomePage();
+    await loginPage.goToUrl('http://automationexercise.com');
+    await homePage.userVerifiesForHomePage();
+    await homePage.userClickedOnProductButton();
+    await homePage.userHoveredOnFirstProductTile();
+    await homePage.userHoversOnSecondProductTile();
+    await homePage.userClickedOnCartButton();
+    await homePage.userVerifiesPriceQuantityAndTotalPriceOfProducts(2);
+})
+
+test("Verify Product quantity in Cart", async ({ page }) => {
+    const poManager = new POManager(page, expect);
+    const loginPage = poManager.getLoginPage();
+    const homePage = poManager.getHomePage();
+    await loginPage.goToUrl('http://automationexercise.com');
+    await homePage.userVerifiesForHomePage();
+    await homePage.userClickedOnViewButtonOfLastProduct();
+    await homePage.userClickedOnCartButton();
+    await homePage.userVerifiesQuantitiesInCartPage();
+})
