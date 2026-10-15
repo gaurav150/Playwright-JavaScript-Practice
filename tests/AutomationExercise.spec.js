@@ -111,3 +111,56 @@ test("Verifying Contact us Form Successfully submitted", async ({ page }) => {
     await contactUsPage.userNavigatingToHomePage();
     await loginPage.userVerifiesForHomePage();
 });
+
+test("Verifying User Naviagated to Test Cases Page", async ({ page }) => {
+    const poManager = new POManager(page, expect);
+    const loginPage = poManager.getLoginPage();
+    const homePage = poManager.getHomePage();
+    await loginPage.goToUrl('http://automationexercise.com');
+    await homePage.userVerifiesForHomePage();
+    await homePage.userClickedOnTestCasesButton();
+});
+
+test("User Verifies All Products and product detail page", async ({ page }) => {
+    const poManager = new POManager(page, expect);
+    const loginPage = poManager.getLoginPage();
+    const homePage = poManager.getHomePage();
+    await loginPage.goToUrl('http://automationexercise.com');
+    await homePage.userVerifiesForHomePage();
+    await homePage.userClickedOnProductButton();
+    await homePage.userVerifiesForProductList();
+    await homePage.userVerifiesFirstProductTile();
+    await homePage.userNaviagatedToViewProductForFirstProduct();
+    await homePage.userVerifiesForFirstProductDetailsPage();
+});
+
+test("User Searches for Tshirt and Verifies search results are related to Tshirt", async ({ page }) => {
+    const poManager = new POManager(page, expect);
+    const loginPage = poManager.getLoginPage();
+    const homePage = poManager.getHomePage();
+    await loginPage.goToUrl('http://automationexercise.com');
+    await homePage.userVerifiesForHomePage();
+    await homePage.userClickedOnProductButton();
+    await homePage.userVerifiesForProductList();
+    await homePage.userSearchedForProduct("Tshirt");
+    await homePage.userVerifiesForProdctsOfSearchResults(/t\s*-?\s*shirts?/i);
+})
+
+test("Verify Subscription in home page", async ({ page }) => { 
+    const poManager = new POManager(page, expect);
+    const loginPage = poManager.getLoginPage();
+    const homePage = poManager.getHomePage();
+    await loginPage.goToUrl('http://automationexercise.com');
+    await homePage.userVerifiesForHomePage();
+    await homePage.userSubscribesToNewsletterSuccessfully("sam@ymail.com");
+})
+
+test(" Verify Subscription in Cart page", async ({ page }) => {
+    const poManager = new POManager(page, expect);
+    const loginPage = poManager.getLoginPage();
+    const homePage = poManager.getHomePage();
+    await loginPage.goToUrl('http://automationexercise.com');
+    await homePage.userVerifiesForHomePage();
+    await homePage.userClickedOnCartButton();
+    await homePage.userSubscribesToNewsletterSuccessfully("sam@ymail.com");
+})
