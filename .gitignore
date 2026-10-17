@@ -16,9 +16,10 @@ node_modules/
 // reports
 allure-results
 allure-report
+cucumber-report.html
 
 // Screenshot
 displayed-text.png
 hide-textbox.png
-
+screenshot1.png
 state.json

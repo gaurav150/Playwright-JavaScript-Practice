@@ -9,7 +9,9 @@
     "uiMode": "npx playwright test --ui",
     "headedMode": "npx playwright test --headed",
     "jenkinsStart": "brew services start jenkins-lts",
-    "jenkinsStop": "brew services stop jenkins-lts"
+    "jenkinsStop": "brew services stop jenkins-lts",
+    "cucumberRegression": "npx cucumber-js --tags '@Regression' --format html:cucumber-report.html",
+    "cucumberValidations": "npx cucumber-js --tags '@validation' --format html:cucumber-report.html"
   },
   "keywords": [],
   "author": "",
