@@ -6,3 +6,6 @@ age1 = 34;
 
 let isActive1 = true;
 
+console.log(message);
+console.log(age1);
+console.log(isActive1);

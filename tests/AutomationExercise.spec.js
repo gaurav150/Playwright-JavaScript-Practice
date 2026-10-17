@@ -165,7 +165,7 @@ test(" Verify Subscription in Cart page", async ({ page }) => {
     await homePage.userSubscribesToNewsletterSuccessfully("sam@ymail.com");
 })
 
-test("Verify Products Added in Cart", async ({ page }) => {
+test("@regular Verify Products Added in Cart", async ({ page }) => {
     const poManager = new POManager(page, expect);
     const loginPage = poManager.getLoginPage();
     const homePage = poManager.getHomePage();
@@ -178,7 +178,7 @@ test("Verify Products Added in Cart", async ({ page }) => {
     await homePage.userVerifiesPriceQuantityAndTotalPriceOfProducts(2);
 })
 
-test("Verify Product quantity in Cart", async ({ page }) => {
+test("@important Verify Product quantity in Cart", async ({ page }) => {
     const poManager = new POManager(page, expect);
     const loginPage = poManager.getLoginPage();
     const homePage = poManager.getHomePage();
